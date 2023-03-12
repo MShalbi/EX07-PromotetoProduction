@@ -1,4 +1,4 @@
-version: '2.1'
+version: 2.1
 jobs:
   create_and_deploy_front_end:
     docker:
@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run: yum install -y tar gzip
       - run:
-          name: Fetch and save the old pipeline ID (bucket name) responsible for the last release.
+          name: Fetch and save the old pipeline ID mybucket12311 responsible for the last release.
           command: |
             aws cloudformation \
             list-exports --query "Exports[?Name==\`PipelineID\`].Value" \
